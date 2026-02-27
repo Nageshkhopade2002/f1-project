@@ -15,7 +15,7 @@ export default function Navbar() {
       <NavLink to="/" className="f1-brand-link">
         <div className="f1-brand">
           <img
-            src={`${API_BASE_URL}/uploads/F1HUB_logo2.png`}
+            src="/uploads/F1HUB_logo2.png"
             alt="F1 HUB"
             className="f1-logo"
           />
