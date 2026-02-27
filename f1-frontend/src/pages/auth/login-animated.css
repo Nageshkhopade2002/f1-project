@@ -1,0 +1,328 @@
+/* =========================================================
+   🔐 2026 PREMIUM LOGIN PAGE - Glassmorphism & 3D Effects
+========================================================= */
+
+.login-animated-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-dark);
+}
+
+.login-animated-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(225, 6, 0, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(225, 6, 0, 0.08), transparent 40%),
+    linear-gradient(135deg, #000000 0%, #0b0b0b 50%, #000000 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+/* Animated Background Gradient */
+.login-animated-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: 
+    linear-gradient(45deg, 
+      transparent 30%, 
+      rgba(225, 6, 0, 0.03) 50%, 
+      transparent 70%);
+  animation: rotateGradient 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateGradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Floating Particles */
+.login-animated-wrap::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(225, 6, 0, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -150px;
+  right: -150px;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* =========================================================
+   🎴 LOGIN CARD - Glass Effect
+========================================================= */
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-radius: var(--radius-2xl);
+  padding: 3rem 2.5rem;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeInUp 0.6s ease-out;
+  transform-style: preserve-3d;
+  transition: all var(--transition-base);
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(225, 6, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   🎯 HEADER SECTION
+========================================================= */
+.login-card h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 900;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.login-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* =========================================================
+   ❗ ALERT MESSAGES
+========================================================= */
+.alert {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  animation: shake 0.5s ease;
+}
+
+.alert-danger {
+  background: rgba(225, 6, 0, 0.15);
+  border: 1px solid rgba(225, 6, 0, 0.3);
+  color: #ff6b6b;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* =========================================================
+   📝 MODERN INPUT FIELDS
+========================================================= */
+.login-card .form-control {
+  width: 100%;
+  height: 54px;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all var(--transition-base);
+  margin-bottom: 1.25rem;
+}
+
+.login-card .form-control::placeholder {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.login-card .form-control:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary-red);
+  box-shadow: 
+    0 0 0 4px rgba(225, 6, 0, 0.1),
+    0 4px 12px rgba(225, 6, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   🔘 MODERN BUTTON
+========================================================= */
+.login-card .btn {
+  width: 100%;
+  height: 54px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.login-card .btn-danger {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 0 8px 20px rgba(225, 6, 0, 0.3);
+}
+
+.login-card .btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.login-card .btn:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.login-card .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px var(--accent-glow-strong);
+}
+
+.login-card .btn:active {
+  transform: translateY(-1px);
+}
+
+.login-card .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================================
+   🔗 FOOTER LINKS
+========================================================= */
+.login-card .d-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.login-card a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.login-card a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width var(--transition-base);
+}
+
+.login-card a:hover {
+  color: var(--primary-red);
+}
+
+.login-card a:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   📱 RESPONSIVE DESIGN
+========================================================= */
+@media (max-width: 768px) {
+  .login-animated-wrap {
+    padding: 1.5rem;
+  }
+  
+  .login-card {
+    padding: 2.5rem 2rem;
+  }
+  
+  .login-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-animated-wrap {
+    padding: 1rem;
+  }
+  
+  .login-card {
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-xl);
+  }
+  
+  .login-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .login-card .form-control,
+  .login-card .btn {
+    height: 50px;
+    font-size: 0.95rem;
+  }
+  
+  .login-card .d-flex {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}

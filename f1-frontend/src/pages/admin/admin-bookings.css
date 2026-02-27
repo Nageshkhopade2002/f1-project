@@ -1,0 +1,158 @@
+.admin-bookings {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.admin-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 3px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.stat-card h3 {
+  margin: 0 0 1rem 0;
+  color: #ccc;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.stat-card.confirmed .stat-number { color: #00ff00; }
+.stat-card.pending .stat-number { color: #ffaa00; }
+.stat-card.cancelled .stat-number { color: #ff0000; }
+.stat-card.revenue .stat-number { color: #0099ff; }
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filters button:hover {
+  background: #555;
+}
+
+.filters button.active {
+  background: #ff0000;
+  border-color: #ff0000;
+}
+
+.bookings-table {
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.bookings-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bookings-table th {
+  background: #222;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #ccc;
+  border-bottom: 1px solid #333;
+}
+
+.bookings-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.bookings-table tr:hover {
+  background: #1a1a1a;
+}
+
+.booking-ref {
+  font-family: monospace;
+  color: #00ff00;
+  font-weight: 600;
+}
+
+.event-name {
+  color: #ff0000;
+  font-weight: 600;
+}
+
+.amount {
+  color: #00ff00;
+  font-weight: 600;
+}
+
+.status-badge {
+  color: #000;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 5rem;
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bookings-table {
+    overflow-x: auto;
+  }
+  
+  .bookings-table table {
+    min-width: 800px;
+  }
+}

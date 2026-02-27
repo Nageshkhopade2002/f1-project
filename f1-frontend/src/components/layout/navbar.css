@@ -1,0 +1,360 @@
+/* =========================================================
+   🎨 2026 PREMIUM NAVBAR - Glassmorphism & Animations
+========================================================= */
+
+.f1-navbar {
+  height: 60px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-base);
+}
+
+.f1-navbar::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-smooth);
+}
+
+.f1-navbar:hover::before {
+  transform: scaleX(1);
+}
+
+.f1-brand {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: white;
+  transition: all var(--transition-base);
+}
+
+.f1-brand:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(225, 6, 0, 0.5));
+}
+
+.f1-brand span {
+  color: var(--primary-red);
+}
+
+.f1-brand-link {
+  text-decoration: none;
+  color: inherit;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+}
+
+.f1-logo {
+  height: clamp(120px, 20vw, 240px);
+  width: auto;
+  margin-left: clamp(-60px, -10vw, -119px);
+  margin-top: 13px;
+  transition: all var(--transition-base);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.f1-logo:hover {
+  filter: drop-shadow(0 6px 12px rgba(225, 6, 0, 0.4));
+}
+
+/* =========================================================
+   🍔 ANIMATED HAMBURGER MENU
+========================================================= */
+.f1-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.f1-hamburger:hover {
+  transform: scale(1.1);
+}
+
+.f1-hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  box-shadow: 0 2px 4px rgba(225, 6, 0, 0.3);
+}
+
+.f1-hamburger:hover span {
+  box-shadow: 0 0 10px rgba(225, 6, 0, 0.6);
+}
+
+/* Hamburger Animation */
+.f1-hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.f1-hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.f1-hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* =========================================================
+   📱 NAVIGATION MENU
+========================================================= */
+.f1-menu {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.f1-link {
+  position: relative;
+  text-decoration: none;
+  color: #a0a0a0;
+  font-weight: 600;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  padding: 0.5rem 0;
+}
+
+.f1-link::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  transform: translateX(-50%);
+  transition: width var(--transition-base);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.f1-link:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.f1-link:hover::before,
+.f1-link.active::before {
+  width: 100%;
+}
+
+.f1-link.active {
+  color: #ffffff;
+}
+
+/* =========================================================
+   🎯 MODERN BUTTONS
+========================================================= */
+.f1-btn {
+  padding: 0.625rem 1.5rem;
+  border-radius: 50px;
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  border: 2px solid #ffffff;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.f1-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  transition: left var(--transition-base);
+  z-index: -1;
+}
+
+.f1-btn:hover::before {
+  left: 0;
+}
+
+.f1-btn:hover {
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.f1-logout {
+  background: transparent;
+  border: 2px solid var(--primary-red);
+  color: var(--primary-red);
+  padding: 0.625rem 1.5rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 700;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.f1-logout::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: left var(--transition-base);
+  z-index: -1;
+}
+
+.f1-logout:hover::before {
+  left: 0;
+}
+
+.f1-logout:hover {
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--accent-glow-strong);
+}
+
+/* =========================================================
+   🎫 MY BOOKINGS BADGE
+========================================================= */
+.my-bookings {
+  background: rgba(225, 6, 0, 0.1);
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--primary-red);
+  position: relative;
+  overflow: hidden;
+}
+
+.my-bookings::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: left var(--transition-base);
+  z-index: -1;
+}
+
+.my-bookings:hover::before {
+  left: 0;
+}
+
+.my-bookings:hover {
+  color: white;
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--accent-glow);
+}
+
+/* =========================================================
+   📱 RESPONSIVE MOBILE MENU
+========================================================= */
+@media (max-width: 992px) {
+  .f1-hamburger {
+    display: flex;
+  }
+
+  .f1-menu {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 320px;
+    height: calc(100vh - 60px);
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem 2rem;
+    gap: 2rem;
+    transition: right var(--transition-smooth);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+    border-left: 2px solid rgba(225, 6, 0, 0.3);
+  }
+
+  .f1-menu.active {
+    right: 0;
+  }
+
+  .f1-link {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .f1-link::before {
+    left: 0;
+    transform: none;
+    height: 2px;
+  }
+
+  .f1-btn, .f1-logout {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.1rem;
+    justify-content: center;
+  }
+
+  .my-bookings {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .f1-navbar {
+    height: 55px;
+    padding: 0 1rem;
+  }
+
+  .f1-logo {
+    height: 100px;
+    margin-left: -50px;
+  }
+
+  .f1-menu {
+    top: 55px;
+    height: calc(100vh - 55px);
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+}

@@ -1,0 +1,217 @@
+.standings-page {
+  background: #000;
+  min-height: 100vh;
+  padding: 2rem 0;
+  color: #fff;
+}
+
+.standings-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.standings-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.standings-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+.standings-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: #111;
+  border-radius: 50px;
+  padding: 4px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.tab-btn {
+  background: transparent;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.tab-btn.active {
+  background: #e10600;
+  color: #fff;
+}
+
+.tab-btn:hover:not(.active) {
+  background: #333;
+}
+
+.standings-loading {
+  text-align: center;
+  color: #666;
+  font-size: 1.2rem;
+  padding: 4rem;
+}
+
+.standings-content {
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.standings-table {
+  width: 100%;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 60px 1fr 200px 80px 80px 100px;
+  background: #1a1a1a;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #e10600;
+  border-bottom: 2px solid #333;
+}
+
+.constructors-standings .table-header {
+  grid-template-columns: 60px 1fr 100px 80px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 200px 80px 80px 100px;
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+  transition: all 0.3s ease;
+  align-items: center;
+}
+
+.constructors-standings .table-row {
+  grid-template-columns: 60px 1fr 100px 80px;
+}
+
+.table-row:hover {
+  background: #1a1a1a;
+}
+
+.table-row:nth-child(1) {
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), transparent);
+}
+
+.table-row:nth-child(2) {
+  background: linear-gradient(90deg, rgba(192, 192, 192, 0.1), transparent);
+}
+
+.table-row:nth-child(3) {
+  background: linear-gradient(90deg, rgba(205, 127, 50, 0.1), transparent);
+}
+
+.pos {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+}
+
+.driver, .constructor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.driver-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.team, .constructor {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.team-color {
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+}
+
+.points {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+.wins, .podiums {
+  font-size: 0.95rem;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Championship leader highlight */
+.table-row:first-child .pos {
+  color: #FFD700;
+}
+
+.table-row:first-child .driver-name {
+  color: #FFD700;
+}
+
+.table-row:first-child .points {
+  color: #FFD700;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .standings-title {
+    font-size: 2rem;
+  }
+  
+  .table-header,
+  .table-row {
+    grid-template-columns: 50px 1fr 60px 60px;
+    font-size: 0.8rem;
+  }
+  
+  .team, .podiums {
+    display: none;
+  }
+  
+  .constructors-standings .table-header,
+  .constructors-standings .table-row {
+    grid-template-columns: 50px 1fr 60px 60px;
+  }
+  
+  .tab-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .standings-container {
+    padding: 0 1rem;
+  }
+  
+  .standings-page {
+    padding: 1rem 0;
+  }
+}

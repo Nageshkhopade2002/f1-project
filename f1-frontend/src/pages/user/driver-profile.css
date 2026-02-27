@@ -1,0 +1,236 @@
+.driver-hero {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* LEFT TEXT */
+.hero-left {
+  z-index: 2;
+}
+
+.driver-first {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.8);
+}
+
+.driver-last {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: -5px;
+}
+
+/* META */
+.hero-meta {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* BIG NUMBER */
+.hero-number {
+  position: absolute;
+  right: 30%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.08);
+  z-index: 1;
+}
+
+/* DRIVER IMAGE */
+.hero-image {
+  position: absolute;
+  right: 10px;          /* push slightly outside */
+  bottom: -800px;         /* pull down for better framing */
+  height: 800%;          /* 🔥 zoom increase */
+  max-height: none;      /* remove limit */
+  object-fit: contain;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+/* OPTIONAL HOVER ZOOM 🔥 */
+.hero-image:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-number {
+    font-size: 8rem;
+    right: 10%;
+  }
+
+  .hero-image {
+    position: relative;
+    height: 250px;
+    margin-top: 1rem;
+  }
+}
+
+.stats-section {
+  padding: 4rem 2rem;
+  background: #000;
+}
+
+.season-stats,
+.career-stats {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.season-stats h2,
+.career-stats h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #fff;
+  border-left: 4px solid #e10600;
+  padding-left: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.stats-grid div {
+  text-align: center;
+  padding: 1rem;
+  background: #2a2a2a;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.stats-grid span {
+  display: block;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.stats-grid strong {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e10600;
+}
+
+.career-stats ul {
+  list-style: none;
+  padding: 0;
+}
+
+.career-stats li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.career-stats li:last-child {
+  border-bottom: none;
+}
+
+.career-stats span {
+  color: #ccc;
+}
+
+.career-stats strong {
+  color: #e10600;
+  font-weight: 700;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.error {
+  color: #e10600;
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid #e10600;
+  color: #e10600;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.back-btn:hover {
+  background: #e10600;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .driver-hero {
+    min-height: 300px;
+  }
+  
+  .hero-container {
+    flex-direction: column;
+  }
+  
+  .driver-first {
+    font-size: 1.5rem;
+  }
+  
+  .driver-last {
+    font-size: 2.5rem;
+  }
+  
+  .hero-number {
+    font-size: 10rem;
+    right: 5%;
+  }
+  
+  .hero-image {
+    height: 70%;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .back-btn-top {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 1rem;
+  }
+}

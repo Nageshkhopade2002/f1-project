@@ -1,0 +1,168 @@
+.book-ticket-page {
+  min-height: 100vh;
+  background: #0f0f0f;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.booking-card {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ticket-info h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.ticket-type {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background: rgba(225, 6, 0, 0.15);
+  color: #e10600;
+  border: 1px solid rgba(225, 6, 0, 0.3);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.race-details {
+  border-top: 1px solid #2a2a2a;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.race-details p {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  color: #aaa;
+}
+
+.race-details strong {
+  color: #fff;
+}
+
+.quantity-selector {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #0f0f0f;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+}
+
+.quantity-selector label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #aaa;
+}
+
+.quantity-selector select {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.quantity-selector select:focus {
+  outline: none;
+  border-color: #e10600;
+}
+
+.total-amount {
+  text-align: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #0f0f0f;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+}
+
+.total-amount h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #e10600;
+  font-weight: 700;
+}
+
+.booking-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.book-btn, .cancel-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.book-btn {
+  background: #e10600;
+  color: white;
+}
+
+.book-btn:hover:not(:disabled) {
+  background: #ff1a0a;
+  transform: translateY(-2px);
+}
+
+.book-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cancel-btn {
+  background: #333;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background: #444;
+}
+
+.loading, .error {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  padding: 4rem;
+}
