@@ -3,7 +3,7 @@ import { useAuth } from "../../context/AuthProvider";
 import { getScheduleByYear } from "../../services/api";
 import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
-import API_BASE_URL from "../../config/api";
+import { API_BASE_URL } from "../../config/api";
 import "./user-dashboard.css";
 
 // Dashboard component for authenticated users
