@@ -193,13 +193,13 @@ export default function UserDashboard() {
   const heroSlides = [
     {
       id: 1,
-      image: `/uploads/hero.avif`,
+      image: `${API_BASE_URL}/uploads/hero.avif`,
       title: "Hamilton feels 'winning mentality' at Ferrari 'more than ever'",
       newsId: 21,
     },
     {
       id: 2,
-      image: `/uploads/hero 1.avif`,
+      image: `${API_BASE_URL}/uploads/hero 1.avif`,
       title:
         " “Norris targets success in 2026 as reigning World Champion.” ",
       newsId: 20,
@@ -390,7 +390,7 @@ export default function UserDashboard() {
 
           <div className="explore-image">
             <img
-              src="/uploads/drivers.avif"
+              src={`${API_BASE_URL}/uploads/drivers.avif`}
               alt="Drivers"
             />
           </div>
@@ -407,7 +407,7 @@ export default function UserDashboard() {
           </div>
 
           <div className="explore-image">
-            <img src="/uploads/race.avif" alt="Teams" />
+            <img src={`${API_BASE_URL}/uploads/race.avif`} alt="Teams" />
           </div>
         </div>
 
@@ -424,7 +424,7 @@ export default function UserDashboard() {
           </div>
 
           <div className="explore-image">
-            <img src="/uploads/race.jpg" alt="Races" />
+            <img src={`${API_BASE_URL}/uploads/race.jpg`} alt="Races" />
           </div>
         </div>
       </section>
@@ -454,12 +454,12 @@ export default function UserDashboard() {
                 className="highlight-card"
                 onClick={() =>
                   setActiveHighlight(
-                    `/uploads/highlights/${img}.jpg`
+                    `${API_BASE_URL}/uploads/highlights/${img}.jpg`
                   )
                 }
               >
                 <img
-                  src={`/uploads/highlights/${img}.jpg`}
+                  src={`${API_BASE_URL}/uploads/highlights/${img}.jpg`}
                   alt={`highlight-${img}`}
                 />
               </div>
