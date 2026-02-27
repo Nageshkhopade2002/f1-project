@@ -10,9 +10,9 @@ target/
 # Logs
 *.log
 
-# Uploads folder (too large for GitHub)
-uploads/
-FEATURED VIDEO/
+# Large video files only
+uploads/FEATURED VIDEO/
+uploads/**/*.mp4
 
 # Environment
 .env
