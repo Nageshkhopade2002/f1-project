@@ -40,13 +40,13 @@ public class SecurityConfig {
 
                 // 🔓 PUBLIC DASHBOARD APIs
                 .requestMatchers(
-                    "/api/schedule/**",
-                    "/api/teams/**",
-                    "/api/drivers/**",
-                    "/api/news/**",
+                    "/api/schedule/**", "/schedule/**",
+                    "/api/teams/**", "/teams/**",
+                    "/api/drivers/**", "/drivers/**",
+                    "/api/news/**", "/news/**",
                     "/api/team-stats/**",
-                    "/api/tickets/**",  // Public ticket viewing
-                    "/api/test-tickets/**"  // Test endpoint
+                    "/api/tickets/**", "/tickets/**",
+                    "/api/test-tickets/**"
                 ).permitAll()
 
                 // 🔐 ADMIN APIs (require authentication)
