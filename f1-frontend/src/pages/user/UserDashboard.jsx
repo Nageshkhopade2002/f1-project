@@ -193,13 +193,13 @@ export default function UserDashboard() {
   const heroSlides = [
     {
       id: 1,
-      image: "http://localhost:8080/uploads/hero.avif",
+      image: `${API_BASE_URL}/uploads/hero.avif`,
       title: "Hamilton feels 'winning mentality' at Ferrari 'more than ever'",
       newsId: 21,
     },
     {
       id: 2,
-      image: "http://localhost:8080/uploads/hero%201.avif",
+      image: `${API_BASE_URL}/uploads/hero%201.avif`,
       title:
         " “Norris targets success in 2026 as reigning World Champion.” ",
       newsId: 20,
@@ -317,8 +317,8 @@ export default function UserDashboard() {
             <div className="explore-image">
               <img
                 src={nextRaces[0].circuit?.trackImage 
-                  ? `http://localhost:8080${nextRaces[0].circuit.trackImage}`
-                  : "http://localhost:8080/uploads/race.jpg"}
+                  ? `${API_BASE_URL}${nextRaces[0].circuit.trackImage}`
+                  : `${API_BASE_URL}/uploads/race.jpg`}
                 alt="Next Race"
               />
             </div>
@@ -390,7 +390,7 @@ export default function UserDashboard() {
 
           <div className="explore-image">
             <img
-              src="http://localhost:8080/uploads/drivers.avif"
+              src={`${API_BASE_URL}/uploads/drivers.avif`}
               alt="Drivers"
             />
           </div>
@@ -407,7 +407,7 @@ export default function UserDashboard() {
           </div>
 
           <div className="explore-image">
-            <img src="http://localhost:8080/uploads/race.avif" alt="Teams" />
+            <img src={`${API_BASE_URL}/uploads/race.avif`} alt="Teams" />
           </div>
         </div>
 
@@ -424,7 +424,7 @@ export default function UserDashboard() {
           </div>
 
           <div className="explore-image">
-            <img src="http://localhost:8080/uploads/race.jpg" alt="Races" />
+            <img src={`${API_BASE_URL}/uploads/race.jpg`} alt="Races" />
           </div>
         </div>
       </section>
@@ -454,12 +454,12 @@ export default function UserDashboard() {
                 className="highlight-card"
                 onClick={() =>
                   setActiveHighlight(
-                    `http://localhost:8080/uploads/highlights/${img}.jpg`
+                    `${API_BASE_URL}/uploads/highlights/${img}.jpg`
                   )
                 }
               >
                 <img
-                  src={`http://localhost:8080/uploads/highlights/${img}.jpg`}
+                  src={`${API_BASE_URL}/uploads/highlights/${img}.jpg`}
                   alt={`highlight-${img}`}
                 />
               </div>
@@ -500,7 +500,7 @@ export default function UserDashboard() {
                   onClick={() => navigate(`/news/${news[0].id}`, { state: { newsItem: news[0] } })}
                 >
                   <img
-                    src={`http://localhost:8080${news[0].imageUrl}`}
+                    src={`${API_BASE_URL}${news[0].imageUrl}`}
                     alt={news[0].title}
                     className="news-image"
                   />
@@ -529,7 +529,7 @@ export default function UserDashboard() {
                     onClick={() => navigate(`/news/${article.id}`, { state: { newsItem: article } })}
                   >
                     <img
-                      src={`http://localhost:8080${article.imageUrl}`}
+                      src={`${API_BASE_URL}${article.imageUrl}`}
                       alt={article.title}
                       className="news-image"
                     />
