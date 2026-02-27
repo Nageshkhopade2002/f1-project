@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../context/AuthProvider";
 import { useState } from "react";
+import { API_BASE_URL } from "../../config/api";
 import "./navbar.css";
 
 export default function Navbar() {
@@ -14,7 +15,7 @@ export default function Navbar() {
       <NavLink to="/" className="f1-brand-link">
         <div className="f1-brand">
           <img
-            src="http://localhost:8080/uploads/F1HUB_logo2.png"
+            src={`${API_BASE_URL}/uploads/F1HUB_logo2.png`}
             alt="F1 HUB"
             className="f1-logo"
           />
