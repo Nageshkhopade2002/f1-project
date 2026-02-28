@@ -17,13 +17,18 @@ public class WebConfig implements WebMvcConfigurer {
                 .addResourceLocations("file:" + uploadDir.toAbsolutePath() + "/");
     }
 
-    // ✅ ADD THIS METHOD (VERY IMPORTANT)
-//    @Override
-//    public void addCorsMappings(CorsRegistry registry) {
-//        registry.addMapping("/**")
-//                .allowedOrigins("http://localhost:5173")
-//                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-//                .allowedHeaders("*")
-//                .allowCredentials(true);
-//    }
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins(
+                    "http://localhost:5173",
+                    "http://localhost:3000",
+                    "https://f1-project-frontend.vercel.app",
+                    "https://f1-project-frontend-git-main-nageshkhopade2002s-projects.vercel.app",
+                    "https://f1-project-frontend-nageshkhopade2002s-projects.vercel.app"
+                )
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
+    }
 }
