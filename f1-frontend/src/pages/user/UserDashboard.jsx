@@ -3,7 +3,6 @@ import { useAuth } from "../../context/AuthProvider";
 import { getScheduleByYear } from "../../services/api";
 import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
-import { API_BASE_URL } from "../../config/api";
 import "./user-dashboard.css";
 
 // Dashboard component for authenticated users
@@ -143,7 +142,7 @@ export default function UserDashboard() {
     }
   };
 
-  const BASE_VIDEO_URL = `${API_BASE_URL}/uploads/FEATURED VIDEO`;
+  const BASE_VIDEO_URL = "http://localhost:8080/uploads/FEATURED VIDEO";
 
   const featuredVideos = [
     {
@@ -193,13 +192,13 @@ export default function UserDashboard() {
   const heroSlides = [
     {
       id: 1,
-      image: `${API_BASE_URL}/uploads/hero.avif`,
+      image: "http://localhost:8080/uploads/hero.avif",
       title: "Hamilton feels 'winning mentality' at Ferrari 'more than ever'",
       newsId: 21,
     },
     {
       id: 2,
-      image: `${API_BASE_URL}/uploads/hero 1.avif`,
+      image: "http://localhost:8080/uploads/hero%201.avif",
       title:
         " “Norris targets success in 2026 as reigning World Champion.” ",
       newsId: 20,
@@ -317,8 +316,8 @@ export default function UserDashboard() {
             <div className="explore-image">
               <img
                 src={nextRaces[0].circuit?.trackImage 
-                  ? `${API_BASE_URL}${nextRaces[0].circuit.trackImage}`
-                  : `${API_BASE_URL}/uploads/race.jpg`}
+                  ? `http://localhost:8080${nextRaces[0].circuit.trackImage}`
+                  : "http://localhost:8080/uploads/race.jpg"}
                 alt="Next Race"
               />
             </div>
@@ -390,7 +389,7 @@ export default function UserDashboard() {
 
           <div className="explore-image">
             <img
-              src={`${API_BASE_URL}/uploads/drivers.avif`}
+              src="http://localhost:8080/uploads/drivers.avif"
               alt="Drivers"
             />
           </div>
@@ -407,7 +406,7 @@ export default function UserDashboard() {
           </div>
 
           <div className="explore-image">
-            <img src={`${API_BASE_URL}/uploads/race.avif`} alt="Teams" />
+            <img src="http://localhost:8080/uploads/race.avif" alt="Teams" />
           </div>
         </div>
 
@@ -424,7 +423,7 @@ export default function UserDashboard() {
           </div>
 
           <div className="explore-image">
-            <img src={`${API_BASE_URL}/uploads/race.jpg`} alt="Races" />
+            <img src="http://localhost:8080/uploads/race.jpg" alt="Races" />
           </div>
         </div>
       </section>
@@ -454,12 +453,12 @@ export default function UserDashboard() {
                 className="highlight-card"
                 onClick={() =>
                   setActiveHighlight(
-                    `${API_BASE_URL}/uploads/highlights/${img}.jpg`
+                    `http://localhost:8080/uploads/highlights/${img}.jpg`
                   )
                 }
               >
                 <img
-                  src={`${API_BASE_URL}/uploads/highlights/${img}.jpg`}
+                  src={`http://localhost:8080/uploads/highlights/${img}.jpg`}
                   alt={`highlight-${img}`}
                 />
               </div>
@@ -500,7 +499,7 @@ export default function UserDashboard() {
                   onClick={() => navigate(`/news/${news[0].id}`, { state: { newsItem: news[0] } })}
                 >
                   <img
-                    src={`${API_BASE_URL}${news[0].imageUrl}`}
+                    src={`http://localhost:8080${news[0].imageUrl}`}
                     alt={news[0].title}
                     className="news-image"
                   />
@@ -529,7 +528,7 @@ export default function UserDashboard() {
                     onClick={() => navigate(`/news/${article.id}`, { state: { newsItem: article } })}
                   >
                     <img
-                      src={`${API_BASE_URL}${article.imageUrl}`}
+                      src={`http://localhost:8080${article.imageUrl}`}
                       alt={article.title}
                       className="news-image"
                     />

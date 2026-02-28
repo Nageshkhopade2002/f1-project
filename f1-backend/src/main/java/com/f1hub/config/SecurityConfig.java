@@ -40,13 +40,13 @@ public class SecurityConfig {
 
                 // 🔓 PUBLIC DASHBOARD APIs
                 .requestMatchers(
-                    "/api/schedule/**", "/schedule/**",
-                    "/api/teams/**", "/teams/**",
-                    "/api/drivers/**", "/drivers/**",
-                    "/api/news/**", "/news/**",
+                    "/api/schedule/**",
+                    "/api/teams/**",
+                    "/api/drivers/**",
+                    "/api/news/**",
                     "/api/team-stats/**",
-                    "/api/tickets/**", "/tickets/**",
-                    "/api/test-tickets/**"
+                    "/api/tickets/**",  // Public ticket viewing
+                    "/api/test-tickets/**"  // Test endpoint
                 ).permitAll()
 
                 // 🔐 ADMIN APIs (require authentication)
@@ -73,11 +73,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of(
-            "http://localhost:5173",
-            "https://f1-project-virid.vercel.app",
-            "https://f1-hub.up.railway.app"
-        ));
+        config.setAllowedOrigins(List.of("http://localhost:5173"));
         config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS","PATCH"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
