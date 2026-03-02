@@ -32,5 +32,12 @@ build/
 ### VS Code ###
 .vscode/
 
-### Uploads ###
+### Uploads - Exclude large files ###
 uploads/
+uploads/**/*.mp4
+uploads/**/*.MP4
+uploads/**/*.mov
+uploads/**/*.MOV
+uploads/**/*.avi
+uploads/**/*.AVI
+uploads/FEATURED VIDEO/

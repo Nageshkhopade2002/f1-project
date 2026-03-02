@@ -9,24 +9,22 @@ import java.nio.file.Paths;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    private final Path uploadDir = Paths.get("uploads");
+    private final String uploadDir = System.getenv("UPLOAD_DIR") != null 
+        ? System.getenv("UPLOAD_DIR") 
+        : Paths.get("uploads").toAbsolutePath().toString();
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/uploads/**")
-                .addResourceLocations("file:" + uploadDir.toAbsolutePath() + "/");
+                .addResourceLocations("file:" + uploadDir + "/");
     }
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins(
-                    "http://localhost:5173",
-                    "http://localhost:3000",
-                    "https://f1-project-frontend.vercel.app",
-                    "https://f1-project-frontend-git-main-nageshkhopade2002s-projects.vercel.app",
-                    "https://f1-project-frontend-nageshkhopade2002s-projects.vercel.app",
-                    "https://f1-project-virid.vercel.app"
+                .allowedOriginPatterns(
+                    "http://localhost:*",
+                    "https://*.vercel.app"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
