@@ -1,0 +1,14 @@
+USE f1hub;
+
+DROP TABLE IF EXISTS race_tickets;
+
+CREATE TABLE race_tickets (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    race_event_id BIGINT NOT NULL,
+    ticket_type VARCHAR(50) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    total_seats INT NOT NULL,
+    available_seats INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
