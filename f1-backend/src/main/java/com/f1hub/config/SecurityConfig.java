@@ -32,8 +32,6 @@ public class SecurityConfig {
             )
             .authorizeHttpRequests(auth -> auth
 
-                // 🔓 ROOT URL
-.requestMatchers("/", "/error").permitAll()
 
                 // 🔓 AUTH
                 .requestMatchers("/api/auth/**").permitAll()
