@@ -1,0 +1,390 @@
+.race-tickets-page {
+  background: #0f0f0f;
+  color: #fff;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+.loading, .error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 16px;
+  color: #666;
+}
+
+.race-header {
+  max-width: 1400px;
+  margin: 0 auto 2.5rem;
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.race-header h1 {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.tickets-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tickets-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #fff;
+  padding-left: 1rem;
+  border-left: 4px solid #e10600;
+}
+
+.no-tickets {
+  text-align: center;
+  padding: 60px 20px;
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.ticket-card {
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.ticket-card:hover {
+  transform: translateY(-4px);
+}
+
+.ticket-card.general {
+  border-color: #333;
+}
+
+.ticket-card.general:hover {
+  border-color: #444;
+}
+
+.ticket-card.paddock {
+  border: 2px solid #d4a500;
+}
+
+.ticket-card.paddock:hover {
+  border-color: #e6b800;
+}
+
+.ticket-card.paddock .ticket-type {
+  color: #d4a500;
+}
+
+.ticket-card.paddock .price {
+  color: #d4a500;
+}
+
+.ticket-card.vip {
+  border: 2px solid #e10600;
+  position: relative;
+}
+
+.vip-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #e10600;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ticket-card.vip:hover {
+  border-color: #ff1a0a;
+}
+
+.ticket-card.vip .ticket-type {
+  color: #e10600;
+}
+
+.ticket-card.vip .price {
+  color: #e10600;
+}
+
+.ticket-type {
+  font-size: 1.25rem;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.availability {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.available {
+  color: #00ff88;
+}
+
+.sold-out {
+  color: #999;
+  font-weight: 600;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ticket-card.general .book-btn:hover:not(:disabled) {
+  background: #444;
+}
+
+.ticket-card.paddock .book-btn {
+  background: #d4a500;
+  color: #000;
+}
+
+.ticket-card.paddock .book-btn:hover:not(:disabled) {
+  background: #e6b800;
+}
+
+.ticket-card.vip .book-btn {
+  background: #e10600;
+  color: #fff;
+}
+
+.ticket-card.vip .book-btn:hover:not(:disabled) {
+  background: #ff1a0a;
+}
+
+.book-btn:disabled {
+  background: #2a2a2a;
+  cursor: not-allowed;
+  color: #666;
+}
+
+.booking-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background: #e10600;
+  color: #fff;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.quantity-selector {
+  margin-bottom: 20px;
+}
+
+.quantity-selector label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #aaa;
+}
+
+.quantity-selector select {
+  width: 100%;
+  padding: 10px 12px;
+  background: #0f0f0f;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.quantity-selector select:focus {
+  outline: none;
+  border-color: #e10600;
+}
+
+.booking-summary {
+  background: #0f0f0f;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 4px 0;
+  font-size: 14px;
+}
+
+.summary-row.total {
+  border-top: 1px solid #2a2a2a;
+  padding-top: 12px;
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #e10600;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.cancel-btn, .confirm-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cancel-btn {
+  background: #333;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background: #444;
+}
+
+.confirm-btn {
+  background: #e10600;
+  color: #fff;
+}
+
+.confirm-btn:hover:not(:disabled) {
+  background: #ff1a0a;
+}
+
+.confirm-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  .tickets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .race-tickets-page {
+    padding: 1rem;
+  }
+  
+  .tickets-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .race-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .race-header {
+    padding: 1.5rem;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 20px;
+  }
+}

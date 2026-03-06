@@ -1,0 +1,61 @@
+.circuit-page {
+  background: #0f0f0f;
+  min-height: 100vh;
+  color: white;
+}
+
+.circuit-hero {
+  background: linear-gradient(90deg, #e10600, #000);
+  padding: 60px 30px;
+}
+
+.circuit-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.circuit-hero p {
+  opacity: 0.8;
+  font-size: 1.2rem;
+}
+
+.f1-stat-card {
+  background: #1a1a1a;
+  border-left: 4px solid #e10600;
+  padding: 20px;
+  border-radius: 10px;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.f1-stat-card:hover {
+  transform: translateY(-5px);
+  background: #222;
+}
+
+.stat-title {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.f1-stat-card h3 {
+  margin-top: 8px;
+  font-weight: 700;
+}
+
+.f1-stat-card small {
+  opacity: 0.6;
+}
+
+.circuit-map-card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px dashed #333;
+}
+
+.loading-text {
+  color: white;
+  padding: 50px;
+}

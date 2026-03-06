@@ -1,0 +1,290 @@
+.f1-page {
+  background: #0b0b0f;
+  color: white;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* HERO */
+.f1-hero {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.f1-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #000, rgba(0,0,0,0.2));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 50px;
+}
+
+.f1-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.f1-hero p {
+  color: #ccc;
+}
+
+/* CIRCUIT */
+.circuit-section {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  padding: 80px 60px;
+  align-items: center;
+}
+
+.circuit-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.track-outline-img {
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.15));
+}
+
+.circuit-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.stat span {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.stat h3 {
+  font-size: 32px;
+  margin-top: 8px;
+}
+
+/* SCHEDULE */
+.schedule-section {
+  padding: 60px;
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle button {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.toggle .active {
+  background: white;
+  color: black;
+}
+
+.schedule-card {
+  margin-top: 30px;
+  background: black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.schedule-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px;
+  padding: 22px;
+  border-bottom: 1px solid #222;
+  align-items: center;
+}
+
+.schedule-row:last-child {
+  border-bottom: none;
+}
+
+.date-col {
+  text-align: center;
+  color: #aaa;
+}
+
+.date-col strong {
+  font-size: 22px;
+  color: white;
+}
+
+.session-name {
+  font-weight: 600;
+}
+
+.session-time {
+  text-align: right;
+  color: #aaa;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .circuit-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .circuit-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .f1-hero h1 {
+    font-size: 2rem;
+  }
+}
+.with-lines {
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Vertical Line */
+.with-lines::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.circuit-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.stat {
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stat.full {
+  grid-column: span 2;
+}
+
+.stat span {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.stat h3 {
+  font-size: 36px;
+  margin-top: 8px;
+}
+
+.stat small {
+  display: block;
+  margin-top: 4px;
+  color: #888;
+  font-size: 13px;
+}
+
+/* Remove last borders */
+.stat:nth-last-child(1),
+.stat:nth-last-child(2) {
+  border-bottom: none;
+}
+
+/* TICKET BOOKING SECTION */
+.ticket-booking-section {
+  padding: 60px;
+  background: #111;
+}
+
+.ticket-card {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  border-radius: 16px;
+  padding: 3rem;
+  border: 1px solid #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ticket-card h2 {
+  color: #ff0000;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.ticket-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ticket-details h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.ticket-details p {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.ticket-meta {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.price {
+  color: #00ff00;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.seats {
+  color: #999;
+  font-size: 1rem;
+}
+
+.book-now-btn {
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  color: #fff;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.book-now-btn:hover {
+  background: linear-gradient(135deg, #cc0000, #990000);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .ticket-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .ticket-meta {
+    justify-content: center;
+  }
+}

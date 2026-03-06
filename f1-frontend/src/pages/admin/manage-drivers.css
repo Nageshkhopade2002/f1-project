@@ -1,0 +1,130 @@
+.drivers-admin-page {
+  padding: 20px;
+}
+
+.driver-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.driver-form input,
+.driver-form textarea {
+  padding: 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.driver-form textarea {
+  grid-column: span 2;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.driver-form label {
+  grid-column: span 2;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.driver-form input[type="file"] {
+  grid-column: span 2;
+}
+
+.driver-form button {
+  grid-column: span 2;
+  padding: 12px;
+  background: linear-gradient(90deg, #d90429, #ef233c);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.driver-form button:hover {
+  opacity: 0.9;
+}
+
+.driver-form button:last-child {
+  background: #444;
+}
+
+.drivers-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.drivers-table th,
+.drivers-table td {
+  border-bottom: 1px solid #eee;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.drivers-table th {
+  background: #1f1f1f;
+  color: white;
+  font-weight: 600;
+}
+
+.drivers-table tr:hover {
+  background: #fafafa;
+}
+
+.drivers-table button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-right: 6px;
+}
+
+.drivers-table button:first-child {
+  background: #007bff;
+  color: white;
+}
+
+.drivers-table button:first-child:hover {
+  background: #0056b3;
+}
+
+.drivers-table .danger {
+  background: #dc3545;
+  color: white;
+}
+
+.drivers-table .danger:hover {
+  background: #b02a37;
+}
+.image-preview {
+  grid-column: span 2;
+  margin-top: 10px;
+}
+
+.image-preview img {
+  max-width: 120px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.table-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}

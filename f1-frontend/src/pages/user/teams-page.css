@@ -1,0 +1,147 @@
+.teams-page {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  padding: clamp(1rem, 3vw, 2rem) 0;
+}
+
+.teams-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.page-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 3px;
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.f1-team-card {
+  height: clamp(200px, 30vw, 220px);
+  border-radius: 24px;
+  padding: clamp(1rem, 3vw, 1.5rem) clamp(1.25rem, 4vw, 2rem);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.f1-team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.f1-team-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.18) 1px,
+    transparent 1px
+  );
+  background-size: 6px 6px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.team-top {
+  z-index: 3;
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-name {
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-weight: 900;
+  margin: 0;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.team-logo-circle {
+  width: clamp(36px, 8vw, 48px);
+  height: clamp(36px, 8vw, 48px);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-logo-circle img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.team-drivers {
+  display: flex;
+  gap: clamp(0.75rem, 2vw, 1.2rem);
+  margin-top: clamp(-2.5rem, -5vw, -3.4rem);
+  flex-wrap: wrap;
+}
+
+.driver-info {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  font-weight: 600;
+}
+
+.driver-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center -4%;
+}
+
+.team-car {
+  position: absolute;
+  bottom: -12px;
+  right: -20px;
+  width: 72%;
+  height: 70%;
+  z-index: 2;
+}
+
+.car-image {
+  width: 131%;
+  height: 100%;
+  object-fit: contain;
+  margin-left: -155px;
+  margin-top: 7px;
+}
+
+@media (max-width: 768px) {
+  .team-drivers {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .car-image {
+    margin-left: -80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .teams-grid {
+    grid-template-columns: 1fr;
+  }
+}

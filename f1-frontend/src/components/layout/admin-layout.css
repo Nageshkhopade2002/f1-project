@@ -1,0 +1,156 @@
+.admin-sidebar {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #0a0a0a;
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  border-right: 1px solid #1a1a1a;
+}
+
+.admin-sidebar.collapsed {
+  width: 60px;
+}
+
+.admin-brand {
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+  margin: 0 16px 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e10600;
+}
+
+.admin-brand span {
+  color: #e10600;
+}
+
+.sidebar-toggle {
+  position: absolute;
+  top: 16px;
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  background: #e10600;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.sidebar-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(225, 6, 0, 0.6);
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 8px;
+  flex: 1;
+}
+
+.admin-link {
+  padding: 10px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.admin-link .icon {
+  font-size: 16px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.admin-link .label {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.admin-sidebar.collapsed .admin-link {
+  justify-content: center;
+}
+
+.admin-link:hover {
+  background: rgba(225, 6, 0, 0.1);
+  color: #fff;
+  transform: translateX(2px);
+}
+
+.admin-link.active {
+  background: linear-gradient(90deg, rgba(225, 6, 0, 0.8), rgba(225, 6, 0, 0.4));
+  color: white;
+  box-shadow: 0 2px 8px rgba(225, 6, 0, 0.3);
+}
+
+.admin-logout {
+  margin: 16px 8px 8px;
+  background: transparent;
+  border: 1px solid #e10600;
+  color: #e10600;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-logout:hover {
+  background: #e10600;
+  color: white;
+  box-shadow: 0 4px 12px rgba(225, 6, 0, 0.4);
+}
+
+.admin-main {
+  margin-left: 220px;
+  min-height: 100vh;
+  padding: 20px;
+  background: #0f0f0f;
+  transition: margin-left 0.3s ease;
+}
+
+.admin-main.expanded {
+  margin-left: 60px;
+}
+
+.admin-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.admin-sidebar::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 2px;
+}
+
+.admin-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #e10600;
+}

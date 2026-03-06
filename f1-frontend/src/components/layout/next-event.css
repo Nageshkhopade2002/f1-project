@@ -1,0 +1,111 @@
+.next-event-bar {
+  background: #15151e;
+  color: white;
+  padding: 8px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  position: sticky;
+  top: 64px;
+  z-index: 999;
+  height: 44px;
+  white-space: nowrap;
+}
+
+.next-event-bar:hover {
+  background: #1a1a25;
+}
+
+.next-event-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.event-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.event-dates {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #999;
+}
+
+.event-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.country-flag-emoji {
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.country-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.arrow-icon {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.event-times {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.time-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  line-height: 1;
+}
+
+.time-label {
+  font-size: 0.6rem;
+  color: #666;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.time-value {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.circuit-badge {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: brightness(0.8);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .next-event-bar {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 16px;
+    height: auto;
+  }
+
+  .event-times {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

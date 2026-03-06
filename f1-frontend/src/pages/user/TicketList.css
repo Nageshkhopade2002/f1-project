@@ -1,0 +1,127 @@
+.ticket-list-page {
+  min-height: 100vh;
+  background: #0f0f0f;
+  color: #fff;
+  padding: 3rem 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.races-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.race-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.race-card:hover {
+  transform: translateY(-4px);
+  border-color: #555;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.race-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 0.75rem;
+}
+
+.race-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  color: #ccc;
+  line-height: 1.4;
+  flex: 1;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.availability-badge {
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.availability-badge.available {
+  background: #00ff88;
+  color: #000;
+}
+
+.availability-badge.sold-out {
+  background: #666;
+  color: #fff;
+}
+
+.race-circuit {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.4rem;
+}
+
+.race-date {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.race-card-footer {
+  padding-top: 1rem;
+  border-top: 1px solid #2a2a2a;
+  margin-top: 0.5rem;
+}
+
+.ticket-types-indicator {
+  font-size: 0.85rem;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #666;
+  padding: 4rem;
+}
+
+@media (max-width: 768px) {
+  .races-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,153 @@
+.race-booking-page {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.booking-card {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  border-radius: 16px;
+  padding: 3rem;
+  border: 1px solid #333;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.booking-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ff0000;
+}
+
+.race-summary {
+  background: #111;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.race-summary h2 {
+  color: #ff0000;
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.race-venue {
+  color: #ccc;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.race-date {
+  color: #999;
+  margin: 0.5rem 0;
+}
+
+.booking-form {
+  margin-top: 2rem;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 1rem;
+  background: #333;
+  border: 1px solid #555;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.price-breakdown {
+  background: #111;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+}
+
+.price-row:not(.total) {
+  border-bottom: 1px solid #333;
+}
+
+.price-row.total {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #00ff00;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #ff0000;
+}
+
+.book-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  color: #fff;
+  border: none;
+  padding: 1.2rem 2rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #cc0000, #990000);
+  transform: translateY(-2px);
+}
+
+.book-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #666;
+}
+
+.loading, .error {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 5rem;
+}
+
+.error {
+  color: #ff0000;
+}
+
+@media (max-width: 768px) {
+  .booking-card {
+    padding: 2rem;
+  }
+  
+  .booking-title {
+    font-size: 2rem;
+  }
+}
