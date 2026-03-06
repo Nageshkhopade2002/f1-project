@@ -13,15 +13,13 @@ import java.util.Arrays;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    private final String uploadDir = System.getenv("UPLOAD_DIR") != null 
-        ? System.getenv("UPLOAD_DIR") 
-        : Paths.get("uploads").toAbsolutePath().toString();
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+
         registry.addResourceHandler("/uploads/**")
-                .addResourceLocations("file:" + uploadDir + "/");
+                .addResourceLocations("file:uploads/");
     }
+}
 
     @Bean
     public CorsFilter corsFilter() {
